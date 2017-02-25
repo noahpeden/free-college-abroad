@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import "./app.css"
-import {Link} from 'react-router'
 import HeaderContainer from '../containers/HeaderContainer'
 import RegionsContainer from '../containers/RegionsContainer'
+import {Link} from 'react-router'
 
 
-const App = () => {
+const App = (props) => {
+
   return (
     <div>
-      <HeaderContainer />
+      <HeaderContainer className="header-container" />
       <RegionsContainer />
     </div>
   )

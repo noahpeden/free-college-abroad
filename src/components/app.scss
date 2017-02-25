@@ -1,26 +1,13 @@
-$color: lightblue;
-
-
-
-header {
-  font-size: 60px;
-  text-align: center;
-  background-color: $color;
-}
-
-h4 {
-  display: inline;
-  padding: 30px;
-}
-
-.region-container {
-  width: 100%;
-  text-align: center;
-  display: block;
+h1 {
+  font-size: 90px;
+  color: white;
+  margin: auto;
+  width: 35%;
 }
 
 /* Dropdown Button */
 .dropbtn {
+    z-index: -100;
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -64,4 +51,35 @@ h4 {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+
+// VIDEO STYLING BELOW!!!
+
+body {
+  margin: 0;
+}
+video {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);  background-size: cover;
+    transition: 1s opacity;
+}
+
+@media screen and (max-width: 500px) {
+  div{width:70%;}
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+
+a {
+  text-decoration: none;
 }

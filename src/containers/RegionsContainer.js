@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { country } from '../actions'
 import Regions from "../components/Regions"
 
 const mapStateToProps = state => {
@@ -10,7 +11,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   // return an object of methods you'd like
   // to dispatch as redux actions
-  return {};
+  return {
+    setCountry: (json)=>{
+      dispatch(country(json))
+    }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Regions);
