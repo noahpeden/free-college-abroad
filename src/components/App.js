@@ -9,7 +9,7 @@ const App = (props) => {
 
   return (
     <div>
-      <HeaderContainer className="header-container" />
+      <HeaderContainer />
       <RegionsContainer />
     </div>
   )

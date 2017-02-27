@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import RenderCountry from "../components/RenderCountry"
 
 const mapStateToProps = state => {
-  console.log(state);
   // return an object of redux store data
   // that you'd like available in your component
   return {
