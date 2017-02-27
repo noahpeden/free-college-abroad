@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
-import Europe from "../components/Europe"
+import RenderCountry from "../components/RenderCountry"
 
 const mapStateToProps = state => {
   // return an object of redux store data
   // that you'd like available in your component
-  return {};
+  return {
+    country: state
+  };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -13,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Europe);
+export default connect(mapStateToProps, mapDispatchToProps)(RenderCountry);

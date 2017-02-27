@@ -1,14 +1,14 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRedirect, IndexRoute } from 'react-router';
 import AppContainer from './containers/AppContainer'
-import EuropeContainer from './containers/EuropeContainer'
+import RenderCountryContainer from './containers/RenderCountryContainer'
 
-import App from './components/App';
 
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={AppContainer} />
-    <Route path="/Europe" component={EuropeContainer} />
+    <Route path="/" component={AppContainer} />
+      <Route path="/:country" component={RenderCountryContainer}/>
   </Router>
 );
 
