@@ -13,6 +13,12 @@ class RenderCountry extends Component {
     }
   }
 
+  componentWillReceiveProps(){
+    this.setState({
+      university: []
+    })
+  }
+
   getUniversity(nationID, data){
     if(nationID){
     let collegeURL = `https://freecollegeapp.herokuapp.com/api/v1/countries/${nationID}/universities`;
@@ -46,7 +52,8 @@ class RenderCountry extends Component {
         <div>
           <RegionsContainer />
           <Link to="/about"><button className="about">About</button></Link>
-        <h1 className="title">Free Degree Options in: {this.props.routeParams.country}</h1>
+          <Link to="/"><button className="about">Home</button></Link>
+        <h1 className="title">Free Degree Options in {this.props.routeParams.country}</h1>
         <div className="university-container">
           {this.displayCountry()}
           {this.state.university.length > 0 && this.state.university.map((country) => {
@@ -57,7 +64,7 @@ class RenderCountry extends Component {
               <div><strong>Application Fee:</strong> {country.application_fee}</div>
               <div><strong>Course Language:</strong> {country.language}</div>
               <div><strong>City:</strong> {country.city}</div>
-              <div><button className="button"><a href={country.uni_website} target="_blank"><strong>Link to University Website</strong></a></button></div>
+              <div className="button"><a href={country.uni_website} target="_blank"><strong>Link to University Website</strong></a></div>
             </div>
             )
           })}

@@ -1,3 +1,8 @@
+body {
+  background: rgb(233, 231, 224);
+
+}
+
 .university-container {
   display: flex;
   width: 90%;
@@ -9,12 +14,16 @@
 
 .university-card {
   position: relative;
+  color: white;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
   border-radius: 5px;
   width: 27%;
-  background: lightgray;
+  background: #42b078;
   margin: 10px;
   text-align: left;
   padding: 10px;
+  padding-top: 0;
+  padding-bottom: 40px;
 }
 
 .title {
@@ -30,10 +39,18 @@
 .button {
   text-decoration: none;
   position: absolute;
-  bottom: 3px;
+  bottom: 9px;
   font-size: 15px;
 }
 
-a {
-  text-decoration: none;
+.button a {
+  border-radius: 5px;
+  padding: 2px 20px;
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.button a:hover {
+  background: lightgrey;
 }
