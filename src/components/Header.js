@@ -7,7 +7,6 @@ import map from './assets/old-world-map.jpg'
 const Header = () => {
   return (
     <div className="header-container">
-      <header id="header-text"></header>
         <div className="logo-container"><img className="logo" src={logo} /></div>
         {/* <img src={map} className="map" /> */}
       <video poster="https://cdn1.goabroad.com/webroot/app/images/intro-video-poster.jpg" id="bgvid" playsInline autoPlay muted loop>
