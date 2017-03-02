@@ -57,19 +57,19 @@ class RenderCountry extends Component {
       return (
         <div>
           <RegionsContainer />
-        <h1>{this.props.routeParams.country}</h1>
+        <h1 className="title">Free Degree Options in: {this.props.routeParams.country}</h1>
         <div className="university-container">
           {this.displayCountry()}
           {this.state.university.length > 0 && this.state.university.map((country) => {
             return (
               <div className="university-card">
-              <div>University: {country.name}</div>
-              <div>Tuition: {country.tuition_fee}</div>
-              <div>Application Fee: {country.application_fee}</div>
-              <div>Visa: {country.visa}</div>
-              <div>Course Language: {country.language}</div>
-              <div>City: {country.city}</div>
-              <div>University Website: <a href={country.uni_website}>{country.uni_website}</a></div>
+              <h3 className="university-name">University: {country.name}</h3>
+              <div><strong>Tuition:</strong> {country.tuition_fee}</div>
+              <div><strong>Application Fee:</strong> {country.application_fee}</div>
+              <div><strong>Visa:</strong> {country.visa}</div>
+              <div><strong>Course Language:</strong> {country.language}</div>
+              <div><strong>City:</strong> {country.city}</div>
+              <div><button><a href={country.uni_website}><strong>Link to University Website</strong></a></button></div>
             </div>
             )
           })}

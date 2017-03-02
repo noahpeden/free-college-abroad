@@ -34,6 +34,8 @@ class Regions extends Component {
 
   render(){
     return (
+      <div>
+      <header className="mobile-header">Free Degree Finder</header>
       <div className="region-container">
         <div className="region">
             <div className="hovereffect">
@@ -109,6 +111,7 @@ class Regions extends Component {
             </div>
         </div>
       </div>
+    </div>
       )
     }
   }
