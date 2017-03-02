@@ -8,6 +8,7 @@
 }
 
 .university-card {
+  position: relative;
   border-radius: 5px;
   width: 27%;
   background: lightgray;
@@ -24,4 +25,15 @@
   .university-card {
     width: 90%;
   }
+}
+
+.button {
+  text-decoration: none;
+  position: absolute;
+  bottom: 3px;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
 }

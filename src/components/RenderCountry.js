@@ -3,7 +3,6 @@ import HeaderContainer from '../containers/HeaderContainer'
 import RegionsContainer from '../containers/RegionsContainer'
 import './render.css'
 
-
 class RenderCountry extends Component {
   constructor(){
     super()
@@ -55,7 +54,7 @@ class RenderCountry extends Component {
               <div><strong>Application Fee:</strong> {country.application_fee}</div>
               <div><strong>Course Language:</strong> {country.language}</div>
               <div><strong>City:</strong> {country.city}</div>
-              <div><button><a href={country.uni_website}><strong>Link to University Website</strong></a></button></div>
+              <div><button className="button"><a href={country.uni_website} target="_blank"><strong>Link to University Website</strong></a></button></div>
             </div>
             )
           })}
