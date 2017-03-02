@@ -95,3 +95,10 @@
   height: 300px;
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 500px) {
+  .region {
+    display: block;
+    width: 100%;
+  }
+}

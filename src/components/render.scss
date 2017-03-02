@@ -1,0 +1,27 @@
+.university-container {
+  display: flex;
+  width: 90%;
+  margin: 0 5%;
+  justify-content: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.university-card {
+  border-radius: 5px;
+  width: 27%;
+  background: lightgray;
+  margin: 10px;
+  text-align: left;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .university-card {
+    width: 90%;
+  }
+}
