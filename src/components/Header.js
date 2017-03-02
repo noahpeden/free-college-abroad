@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <div className="header-container">
         <div className="logo-container"><img className="logo" src={logo} /></div>
+        <Link to="/about"><button className="about">About</button></Link>
         {/* <img src={map} className="map" /> */}
       <video poster="https://cdn1.goabroad.com/webroot/app/images/intro-video-poster.jpg" id="bgvid" playsInline autoPlay muted loop>
         <source src="https://cdn3.goabroad.com/videos/ga-intro-video.webm" type="video/webm"/>

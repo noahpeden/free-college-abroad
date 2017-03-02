@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import HeaderContainer from '../containers/HeaderContainer'
 import RegionsContainer from '../containers/RegionsContainer'
 import './render.css'
+import {Link} from 'react-router'
+
 
 class RenderCountry extends Component {
   constructor(){
@@ -43,6 +45,7 @@ class RenderCountry extends Component {
       return (
         <div>
           <RegionsContainer />
+          <Link to="/about"><button className="about">About</button></Link>
         <h1 className="title">Free Degree Options in: {this.props.routeParams.country}</h1>
         <div className="university-container">
           {this.displayCountry()}

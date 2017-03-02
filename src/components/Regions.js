@@ -32,25 +32,15 @@ class Regions extends Component {
     }
   }
 
-  componentDidMount(){
 
+
+  componentDidMount(){
     const countriesUrl = `https://freecollegeapp.herokuapp.com/api/v1/countries`;
     const regionsUrl = `https://freecollegeapp.herokuapp.com/api/v1/regions`;
 
-    // new Promise((resolve, reject) => {
-    //   resolve('test')
-    // }).then((response) => {
-    //   return new Promise((resolve, reject) => {
-    //     resolve('other');
-    //   }).then((res) => {
-    //     return 'thing'
-    //   })
-    // }).then((val) => {
-    //   val === 'thing';
-    // })
-
     Promise.all([fetch(countriesUrl).then((r) => r.json()), fetch(regionsUrl).then((r) => r.json())])
     .then(([countries, regions]) => {
+      console.log(countries, regions);
       this.props.setCountry(countries)
       return regions.sort((a, b) => {
         return orderMap[a.region] - orderMap[b.region];
@@ -59,7 +49,6 @@ class Regions extends Component {
         return region;
       });
     }).then((response) => {
-      console.log(response);
       this.setState({
         regions: response
       })

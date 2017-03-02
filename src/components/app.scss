@@ -63,12 +63,15 @@ header {
     visibility: visible;
   }
 }
+.about {
+  background: white;
+  margin-left: 5px;
+  font-size: 30px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
 
-//
-// .map{
-//   position: absolute;
-//   bottom: 0;
-//   left:0;
-//   height: 65%;
-//   width: 100%;
-// }
+.about:hover {
+  background: lightgray;
+}

@@ -49,3 +49,14 @@ header {
     font-size: 20px;
     text-align: center;
     visibility: visible; } }
+
+.about {
+  background: white;
+  margin-left: 5px;
+  font-size: 30px;
+  border-radius: 4px;
+  border: none;
+  outline: none; }
+
+.about:hover {
+  background: lightgray; }
