@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HeaderContainer from '../containers/HeaderContainer'
 import RegionsContainer from '../containers/RegionsContainer'
+import './render.css'
 
 
 class RenderCountry extends Component {
@@ -57,6 +58,7 @@ class RenderCountry extends Component {
         <div>
           <RegionsContainer />
         <h1>{this.props.routeParams.country}</h1>
+        <div className="university-container">
           {this.displayCountry()}
           {this.state.university.length > 0 && this.state.university.map((country) => {
             return (
@@ -64,9 +66,14 @@ class RenderCountry extends Component {
               <div>University: {country.name}</div>
               <div>Tuition: {country.tuition_fee}</div>
               <div>Application Fee: {country.application_fee}</div>
+              <div>Visa: {country.visa}</div>
+              <div>Course Language: {country.language}</div>
+              <div>City: {country.city}</div>
+              <div>University Website: <a href={country.uni_website}>{country.uni_website}</a></div>
             </div>
             )
           })}
+          </div>
         </div>
       )
     }

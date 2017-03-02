@@ -5,12 +5,12 @@ import RegionsContainer from '../containers/RegionsContainer'
 import {Link} from 'react-router'
 
 
-const App = (props) => {
+const App = () => {
 
   return (
     <div>
-      <HeaderContainer />
       <RegionsContainer />
+      <HeaderContainer />
     </div>
   )
 }

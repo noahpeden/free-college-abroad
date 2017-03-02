@@ -1,35 +1,34 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo|Slabo+27px");
+.logo-container {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
 .logo {
   position: absolute;
-  z-index: 1000;
-  margin-top: 10%; }
-
-#Container {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  z-index: 5; }
+  z-index: 10; }
 
 body {
   margin: 0; }
 
 video {
   position: fixed;
-  top: 10%;
+  top: 100%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 200%;
   z-index: -100;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%); }
+  transform: translateX(-50%) translateY(-60%); }
 
 @media screen and (max-width: 500px) {
   div {
@@ -37,17 +36,9 @@ video {
 
 @media screen and (max-device-width: 800px) {
   html {
-    background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+    background: url(https://cdn1.goabroad.com/webroot/app/images/intro-video-poster.jpg) #000 no-repeat center center fixed; }
   #bgvid {
     display: none; } }
-
-.region-container {
-  border: 1px solid green;
-  position: absolute;
-  width: 100%;
-  height: 40%;
-  bottom: 0;
-  left: 0; }
 
 a {
   text-decoration: none; }

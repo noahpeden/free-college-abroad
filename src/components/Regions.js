@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router'
+import africa from './assets/africa.jpg'
+import centralAmerica from './assets/central-america.jpg'
+import northAmerica from './assets/north-america.jpg'
+import europe from './assets/europe.jpg'
+import southAmerica from './assets/south-america.jpg'
 import "./regions.css"
 
 
@@ -30,73 +35,82 @@ class Regions extends Component {
   render(){
     return (
       <div className="region-container">
-        <nav>
-          <ul>
-            <li><a href="#">Europe</a>
-            <ul>
-              <li><Link to="/Austria/"
-              >Austria</Link></li>
-              <li><Link to="/Czech_Republic/"
-              >Czech Republic</Link></li>
-              <li><Link to="/Denmark/"
+        <div className="region">
+            <div className="hovereffect">
+                <img className="img-responsive" src={southAmerica} alt=""></img>
+                    <div className="overlay">
+                        <h2>South America</h2>
 
-              >Denmark</Link></li>
-              <li><Link to="/Finland/"
+        				<p>
+                  <Link to="/Argentina">Argentina</Link><br/>
+                  <Link to="/Brazil">Brazil</Link><br/>
+                  <Link to="/Uruguay">Uruguay</Link><br/>
+                  <Link to="/Ecuador">Ecuador</Link>
+        				</p>
+                    </div>
+            </div>
+        </div>
+        <div className="region">
+            <div className="hovereffect">
+                <img className="img-responsive" src={centralAmerica} alt=""></img>
+                    <div className="overlay">
+                        <h2>Central America</h2>
 
-              >Finland</Link></li>
-              <li><Link to="/France/"
+        				<p>
+                  <Link to="/Panama">Panama</Link><br/>
+        				</p>
+                    </div>
+            </div>
+        </div>
+        <div className="region">
+            <div className="hovereffect">
+                <img className="img-responsive" src={europe} alt=""></img>
+                    <div className="overlay">
+                        <h2>Europe</h2>
+                <p>
+                  <Link to="/Austria">Austria</Link><br/>
+                  <Link to="/Czech_Republic">Czech Republic</Link><br/>
+                  <Link to="/Denmark">Denmark</Link><br/>
+                  <Link to="/Finland">Finland</Link><br/>
+                  <Link to="/France">France</Link><br/>
+                  <Link to="/Germany">Germany</Link><br/>
+                  <Link to="/Iceland">Iceland</Link><br/>
+                  <Link to="/Ireland">Ireland</Link><br/>
+                  <Link to="/Luxembourg">Luxembourg</Link><br/>
+                  <Link to="/Norway">Norway</Link><br/>
+                  <Link to="/Slovenia">Slovenia</Link><br/>
+                </p>
+                    </div>
+            </div>
+        </div>
+        <div className="region">
+            <div className="hovereffect">
+                <img className="img-responsive" src={northAmerica} alt=""></img>
+                    <div className="overlay">
+                        <h2>North America</h2>
 
-              >France</Link></li>
-              <li><Link to="/Germany/"
-
-              >Germany</Link></li>
-              <li><Link to="/Iceland/"
-
-              >Iceland</Link></li>
-              <li><Link to="/Ireland/"
-
-              >Ireland</Link></li>
-              <li><Link to="/Luxembourg/"
-
-              >Luxembourg</Link></li>
-              <li><Link to="/Norway/"
-
-              >Norway</Link></li>
-              <li><Link to="/Slovenia/"
-
-              >Slovenia</Link></li>
-            </ul>
-          </li>
-          <li><a href="#">South America</a>
-          <ul>
-            <li><Link to="/Argentina">Argentina</Link></li>
-            <li><Link to="/Brazil">Brazil</Link></li>
-            <li><Link to="/Uruguay">Uruguay</Link></li>
-            <li><Link to="/Ecuador">Ecuador</Link></li>
-          </ul>
-        </li>
-        <li><a href="#">Central America</a>
-        <ul>
-          <li><Link to="/Panama">Panama</Link></li>
-        </ul>
-      </li>
-      <li><a href="#">North America</a>
-      <ul>
-        <li> <Link to="/Cuba">Cuba</Link></li>
-        <li><Link to="/Mexico">Mexico</Link></li>
-      </ul>
-    </li>
-    <li><a href="#">Africa</a>
-    <ul>
-      <li><Link to="/Morocco">Morocco</Link></li>
-      <li> <Link to="/Tunisia">Tunisia</Link></li>
-    </ul>
-  </li>
-</ul>
-</nav>
-</div>
-)
-}
-}
+        				<p>
+                  <Link to="/Cuba">Cuba</Link><br/>
+                  <Link to="/Mexico">Mexico</Link><br/>
+        				</p>
+                    </div>
+            </div>
+        </div>
+        <div className="region">
+            <div className="hovereffect">
+                <img className="img-responsive" src={africa} alt=""></img>
+                    <div className="overlay">
+                        <h2>Africa</h2>
+        				<p>
+                  <Link to="/Morocco">Morocco</Link><br/>
+                  <Link to="/Tunisia">Tunisia</Link><br/>
+        				</p>
+                    </div>
+            </div>
+        </div>
+      </div>
+      )
+    }
+  }
 
 export default Regions;
