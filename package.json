@@ -5,6 +5,7 @@
   "devDependencies": {
     "babel-jest": "^19.0.0",
     "babel-polyfill": "^6.23.0",
+    "babel-preset-react": "^6.23.0",
     "chai": "^3.5.0",
     "create-react-app-sass": "^1.1.0",
     "css-loader": "^0.26.1",
@@ -47,5 +48,5 @@
   "bugs": {
     "url": "https://github.com/noahpeden/free-college-abroad/issues"
   },
-  "homepage": "https://github.com/noahpeden/free-college-abroad#readme"
+  "homepage": "https://noahpeden.github.io/free-college-abroad"
 }

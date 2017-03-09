@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import HeaderContainer from '../containers/HeaderContainer'
 import RegionsContainer from '../containers/RegionsContainer'
 import './render.css'
+import {Link} from 'react-router'
 
 
 class RenderCountry extends Component {
@@ -10,6 +11,12 @@ class RenderCountry extends Component {
     this.state = {
       university: []
     }
+  }
+
+  componentWillReceiveProps(){
+    this.setState({
+      university: []
+    })
   }
 
   getUniversity(nationID, data){
@@ -44,7 +51,9 @@ class RenderCountry extends Component {
       return (
         <div>
           <RegionsContainer />
-        <h1 className="title">Free Degree Options in: {this.props.routeParams.country}</h1>
+          <Link to="/about"><button className="about">About</button></Link>
+          <Link to="/"><button className="about">Home</button></Link>
+        <h1 className="title">Free Degree Options in {this.props.routeParams.country}</h1>
         <div className="university-container">
           {this.displayCountry()}
           {this.state.university.length > 0 && this.state.university.map((country) => {
@@ -55,7 +64,7 @@ class RenderCountry extends Component {
               <div><strong>Application Fee:</strong> {country.application_fee}</div>
               <div><strong>Course Language:</strong> {country.language}</div>
               <div><strong>City:</strong> {country.city}</div>
-              <div><button><a href={country.uni_website}><strong>Link to University Website</strong></a></button></div>
+              <div className="button"><a href={country.uni_website} target="_blank"><strong>Link to University Website</strong></a></div>
             </div>
             )
           })}

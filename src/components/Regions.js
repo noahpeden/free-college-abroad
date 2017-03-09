@@ -7,113 +7,84 @@ import europe from './assets/europe.jpg'
 import southAmerica from './assets/south-america.jpg'
 import "./regions.css"
 
+const REGION_IMAGE = {
+  'South America': southAmerica,
+  "Central America": centralAmerica,
+  'Europe': europe,
+  'North America': northAmerica,
+  'Africa': africa
+}
 
-
+const orderMap = {
+  'North America':0,
+  'South America':1,
+  'Europe':2,
+  'Africa':3,
+  'Central America':4
+};
 
 class Regions extends Component {
   constructor(){
     super()
     this.state = {
       countryID: 1,
+      regions: []
     }
   }
 
+
+
   componentDidMount(){
-    let collegeURL = `https://freecollegeapp.herokuapp.com/api/v1/countries`;
-    fetch(collegeURL)
-    .then((response) => {
-      return response.json()
+    const countriesUrl = `https://freecollegeapp.herokuapp.com/api/v1/countries`;
+    const regionsUrl = `https://freecollegeapp.herokuapp.com/api/v1/regions`;
+
+    Promise.all([fetch(countriesUrl).then((r) => r.json()), fetch(regionsUrl).then((r) => r.json())])
+    .then(([countries, regions]) => {
+      console.log(countries, regions);
+      this.props.setCountry(countries)
+      return regions.sort((a, b) => {
+        return orderMap[a.region] - orderMap[b.region];
+      }).map((region) => {
+        region.countries = countries.filter((c) => c.region_id === region.id);
+        return region;
+      });
+    }).then((response) => {
+      this.setState({
+        regions: response
+      })
     })
-    .then((json) => {
-      this.props.setCountry(json)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  }
+
+  mapCountry = (country) => (
+    [<Link key={country.id} to={`/${country.name}`}>{country.name}</Link>, <br />]
+  )
+
+  mapRegion = (region) => {
+    return (
+      <div key={region.id} className="region">
+        <div className="hovereffect">
+          <img className="img-responsive" src={REGION_IMAGE[region.region]} alt=""></img>
+          <div className="overlay">
+            <h2>{region.region}</h2>
+            <p>
+              { region.countries.map(this.mapCountry) }
+            </p>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   render(){
     return (
       <div>
-      <header className="mobile-header">Free Degree Finder</header>
-      <div className="region-container">
-        <div className="region">
-            <div className="hovereffect">
-                <img className="img-responsive" src={southAmerica} alt=""></img>
-                    <div className="overlay">
-                        <h2>South America</h2>
-
-        				<p>
-                  <Link to="/Argentina">Argentina</Link><br/>
-                  <Link to="/Brazil">Brazil</Link><br/>
-                  <Link to="/Uruguay">Uruguay</Link><br/>
-                  <Link to="/Ecuador">Ecuador</Link>
-        				</p>
-                    </div>
-            </div>
-        </div>
-        <div className="region">
-            <div className="hovereffect">
-                <img className="img-responsive" src={centralAmerica} alt=""></img>
-                    <div className="overlay">
-                        <h2>Central America</h2>
-
-        				<p>
-                  <Link to="/Panama">Panama</Link><br/>
-        				</p>
-                    </div>
-            </div>
-        </div>
-        <div className="region">
-            <div className="hovereffect">
-                <img className="img-responsive" src={europe} alt=""></img>
-                    <div className="overlay">
-                        <h2>Europe</h2>
-                <p>
-                  <Link to="/Austria">Austria</Link><br/>
-                  <Link to="/Czech_Republic">Czech Republic</Link><br/>
-                  <Link to="/Denmark">Denmark</Link><br/>
-                  <Link to="/Finland">Finland</Link><br/>
-                  <Link to="/France">France</Link><br/>
-                  <Link to="/Germany">Germany</Link><br/>
-                  <Link to="/Iceland">Iceland</Link><br/>
-                  <Link to="/Ireland">Ireland</Link><br/>
-                  <Link to="/Luxembourg">Luxembourg</Link><br/>
-                  <Link to="/Norway">Norway</Link><br/>
-                  <Link to="/Slovenia">Slovenia</Link><br/>
-                </p>
-                    </div>
-            </div>
-        </div>
-        <div className="region">
-            <div className="hovereffect">
-                <img className="img-responsive" src={northAmerica} alt=""></img>
-                    <div className="overlay">
-                        <h2>North America</h2>
-
-        				<p>
-                  <Link to="/Cuba">Cuba</Link><br/>
-                  <Link to="/Mexico">Mexico</Link><br/>
-        				</p>
-                    </div>
-            </div>
-        </div>
-        <div className="region">
-            <div className="hovereffect">
-                <img className="img-responsive" src={africa} alt=""></img>
-                    <div className="overlay">
-                        <h2>Africa</h2>
-        				<p>
-                  <Link to="/Morocco">Morocco</Link><br/>
-                  <Link to="/Tunisia">Tunisia</Link><br/>
-        				</p>
-                    </div>
-            </div>
+        <header className="mobile-header">Free Degree Finder</header>
+        <div className="region-container">
+          {this.state.regions.map(this.mapRegion)}
         </div>
       </div>
-    </div>
-      )
-    }
+    )
   }
+}
 
 export default Regions;

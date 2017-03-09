@@ -37,9 +37,6 @@ video {
   transform: translateX(-50%) translateY(-60%);
 }
 
-
-
-
 a {
   text-decoration: none;
 }
@@ -63,12 +60,27 @@ header {
     visibility: visible;
   }
 }
+.about {
+  background: white;
+  margin-left: 5px;
+  font-size: 30px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
 
-//
-// .map{
-//   position: absolute;
-//   bottom: 0;
-//   left:0;
-//   height: 65%;
-//   width: 100%;
-// }
+.about:hover {
+  cursor: pointer;
+  background: darkgrey;
+}
+
+.about-text {
+  background: white;
+  border: 1px solid black;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 5px;
+}

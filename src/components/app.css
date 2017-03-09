@@ -49,3 +49,25 @@ header {
     font-size: 20px;
     text-align: center;
     visibility: visible; } }
+
+.about {
+  background: white;
+  margin-left: 5px;
+  font-size: 30px;
+  border-radius: 4px;
+  border: none;
+  outline: none; }
+
+.about:hover {
+  cursor: pointer;
+  background: darkgrey; }
+
+.about-text {
+  background: white;
+  border: 1px solid black;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 5px; }
